@@ -2,6 +2,7 @@ FROM ubuntu:1804
 RUN apt update
 RUN apt install -y default-jdk
 RUN apt install -y maven 
+RUN mkdir -p /opt/apache-tomcat-9.0.69
 RUN mkdir -p /boxfuse
 WORKDIR  /boxfuse
 RUN wget https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.69/bin/apache-tomcat-9.0.69.tar.gz 
