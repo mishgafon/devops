@@ -14,3 +14,4 @@ RUN cp hello-1.0.war /var/lib/tomcat9/webapps
 #RUN boxfuse run target/hello-1.0.war
 EXPOSE 8080
 #CMD ["nginx", "-g", "daemon off;"]
+CMD ["java","-war","/var/lib/tomcat9/webapps/hello-1.0.war"]
