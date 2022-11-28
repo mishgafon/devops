@@ -1,4 +1,4 @@
-FROM ubuntu:18.04
+FROM ubuntu:1804
 RUN apt update
 RUN apt install -y default-jdk
 RUN apt install -y maven 
@@ -14,4 +14,4 @@ RUN cp hello-1.0.war /var/lib/tomcat9/webapps
 #RUN boxfuse run target/hello-1.0.war
 EXPOSE 8080
 #CMD ["nginx", "-g", "daemon off;"]
-CMD ["hello-1.0.war","run"]
+CMD ["/opt/tomcat/catalina.sh", "run"]
