@@ -1,6 +1,6 @@
 FROM ubuntu:18.04
 RUN apt update
-RUN apt install -y default-jdk maven
+RUN apt install -y default-jdk maven wget
 WORKDIR /opt/tomcat
 RUN mkdir -p /boxfuse
 WORKDIR  /boxfuse
