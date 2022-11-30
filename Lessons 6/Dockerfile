@@ -6,7 +6,7 @@ RUN mkdir -p /boxfuse
 WORKDIR  /boxfuse
 RUN wget https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.69/bin/apache-tomcat-9.0.69.tar.gz 
 RUN tar zxf /boxfuse/apache-tomcat-9.0.69.tar.gz 
-RUN cp /boxfuse/apache-tomcat-9.0.69/*  /opt/tomcat/
+RUN cp -Rv /boxfuse/apache-tomcat-9.0.69/*  /opt/tomcat/
 RUN apt install -y git 
 RUN git clone https://github.com/boxfuse/boxfuse-sample-java-war-hello 
 WORKDIR /boxfuse/boxfuse-sample-java-war-hello
