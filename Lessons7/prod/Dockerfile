@@ -1,5 +1,4 @@
-FROM alpine:3.17                                                                                    /home/mishg/lessons7/prod/Dockerfile                                                                                                   FROM alpine
-RUN apk update
+FROM alpine:3.17           
 RUN apk update --no-cache openjdk11
 RUN apk add --no-cache wget
 RUN rm -rf /var/cache/apk/*
