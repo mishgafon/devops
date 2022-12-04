@@ -15,8 +15,8 @@ services:
     - type: volume
       source: boxfuse
       target: /opt/tomcat/webapps  
-  ports:
-    - "8080:8080"
+    ports:
+      - "8080:8080"
 volumes:
   boxfuse:
 
