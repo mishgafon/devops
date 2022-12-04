@@ -9,6 +9,8 @@ services:
       source: boxfuse
       target: /boxfuse/boxfuse-sample-java-war-hello/target
   prod:
+    depends_on:
+      - bild
     build: prod
     container_name: prod
     volumes:
