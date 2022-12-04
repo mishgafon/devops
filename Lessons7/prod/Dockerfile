@@ -1,6 +1,6 @@
 FROM alpine
-RUN apt update
-RUN apt install -y default-jdk wget
+RUN apk update
+RUN apk install -y default-jdk wget
 WORKDIR /opt/tomcat
 WORKDIR  /tmp
 RUN wget https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.69/bin/apache-tomcat-9.0.69.tar.gz -O tomcat.tar.gz
