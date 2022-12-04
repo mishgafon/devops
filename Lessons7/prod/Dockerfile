@@ -1,6 +1,8 @@
-FROM alpine:3.17           
-RUN apk update --no-cache openjdk11
+FROM alpine
+RUN apk add --update openjdk11
 RUN apk add --no-cache wget
+RUN apk add ca-certificates
+RUN apk update ca-certificates
 RUN rm -rf /var/cache/apk/*
 WORKDIR /opt/tomcat
 WORKDIR  /tmp
