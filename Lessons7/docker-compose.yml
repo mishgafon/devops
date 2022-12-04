@@ -4,7 +4,7 @@ services:
   bild:
     build: bild
     container_name: bild
-  volumes:
+    volumes:
     - type: volume
       source: boxfuse
       target: /boxfuse/boxfuse-sample-java-war-hello/target
@@ -12,11 +12,11 @@ services:
     build: prod
     container_name: prod
     volumes:
-      - type: volume
-        source: boxfuse
-        target: /opt/tomcat/webapps  
-    ports:
-      - 8080:8080
+    - type: volume
+      source: boxfuse
+      target: /opt/tomcat/webapps  
+  ports:
+    - "8080:8080"
 volumes:
   boxfuse:
 
