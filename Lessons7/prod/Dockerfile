@@ -1,6 +1,6 @@
 FROM alpine:3.14
 RUN apk update
-RUN apk apk add --no-cache openjdk11 wget
+RUN apk add --no-cache openjdk11 wget
 WORKDIR /opt/tomcat
 WORKDIR  /tmp
 RUN wget https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.69/bin/apache-tomcat-9.0.69.tar.gz -O tomcat.tar.gz
