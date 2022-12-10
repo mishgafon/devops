@@ -1,4 +1,4 @@
-FROM alpine
+FROM tomcat:alpine
 RUN apk add --update openjdk11
 RUN apk add --no-cache wget
 RUN apk add ca-certificates
