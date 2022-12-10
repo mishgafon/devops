@@ -14,4 +14,4 @@ FROM tomcat:alpine
 #RUN boxfuse run target/hello-1.0.war
 EXPOSE 8080
 #CMD ["nginx", "-g", "daemon off;"]
-CMD ["/opt/tomcat/bin/catalina.sh", "run"]
+CMD ["/usr/local/tomcat/bin/catalina.sh", "run"]
