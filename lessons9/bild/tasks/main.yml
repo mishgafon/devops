@@ -1,0 +1,31 @@
+---
+# tasks file for bild
+- name: Ensure JDK is present
+  apt:
+    name: default-jdk
+    state: present
+    
+- name: Ensure Maven is present
+  apt:
+    name: maven
+    state: present
+    
+- name: Ensure Git is present
+  apt:
+    name: git
+    state: present
+
+- name: Clone repository
+  git:
+    repo: https://github.com/boxfuse/boxfuse-sample-java-war-hello
+    dest: {{ dest_folder }}
+    force: yes
+
+- name: Bild maven
+  shell: mvn package
+  args:
+      chdir: {{ dest_folder }}
+
+
+
+

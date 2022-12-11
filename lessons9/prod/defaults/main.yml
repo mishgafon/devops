@@ -1,0 +1,4 @@
+---
+# defaults file for deploy
+file_artefact: /boxfuse/boxfuse-sample-java-war-hello/target/hello-1.0.war
+folder_tomcat: /usr/local/tomcat/webapps/hello-1.0.war

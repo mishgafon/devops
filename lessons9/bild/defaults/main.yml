@@ -1,0 +1,3 @@
+---
+# defaults file for bild
+dest_folder: /boxfuse/boxfuse-sample-java-war-hello

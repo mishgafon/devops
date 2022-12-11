@@ -1,0 +1,24 @@
+---
+# tasks file for deploy    
+- name: Update the System Packages
+  apt:
+    upgrade: yes
+    update_cache: yes
+    
+- name: Ensure Tomcat is present
+  apt:
+    name: tomcat9
+    state: present
+    
+- name: Ensure Tomcat service is started
+  service:
+    name: tomcat9
+    state: started
+    
+- name: Synchronization artifact hello-1.0.war
+  synchronize:
+    src: {{ file_artefact }}
+    dest: {{ folder_tomcat }}
+  delegate_to: 158.160.45.173
+  notify: 
+   - restart tomcat9

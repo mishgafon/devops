@@ -1,0 +1,4 @@
+---
+# hadnlers file for deploy
+- name: restart tomcat9
+  service: name=tomcat9 state=restarted
