@@ -1,0 +1,69 @@
+---
+- name: install jdk&maven
+  hosts: 84.201.172.36
+  become: yes
+  
+  tasks:
+    - name: Update the System Packages
+      apt:
+        upgrade: yes
+        update_cache: yes
+    
+    - name: Ensure JDK is present
+      apt:
+        name: default-jdk
+        state: present
+    
+    - name: Ensure Maven is present
+      apt:
+        name: maven
+        state: present
+    
+    - name: Ensure Git is present
+      apt:
+        name: git
+        state: present
+    
+    - name: Create a 'boxfuse' directory
+      file:
+        path: /boxfuse
+        state: directory
+        mode: "0755"
+        recurse: yes
+    
+    - name: Clone repository
+      git:
+        repo: https://github.com/boxfuse/boxfuse-sample-java-war-hello
+        dest: /boxfuse/
+    
+    - name: Bild maven
+      shell: mvn package
+      args:
+        chdir: /boxfuse/boxfuse-sample-java-war-hello
+
+
+- name: install application
+  hosts: 62.84.126.8
+  become: yes
+  
+  tasks:
+    - name: Update the System Packages
+      apt:
+        upgrade: yes
+        update_cache: yes
+    
+    - name: Ensure Tomcat is present
+      apt:
+        name: tomcat9
+        state: present
+    
+    - name: Ensure Tomcat service is started
+      service:
+        name: tomcat
+        state: started
+    
+    - name: Synchronization file
+      synchronize:
+        src: /boxfuse/boxfuse-sample-java-war-hello/target/hello-1.0.war
+        dest: /usr/local/tomcat/webapps
+        delegeate_to: 84.201.172.36
