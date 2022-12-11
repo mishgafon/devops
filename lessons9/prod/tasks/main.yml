@@ -17,8 +17,8 @@
     
 - name: Synchronization artifact hello-1.0.war
   synchronize:
-    src: {{ file_artefact }}
-    dest: {{ folder_tomcat }}
+    src: "{{ file_artefact }}"
+    dest: "{{ folder_tomcat }}"
   delegate_to: 158.160.45.173
   notify: 
    - restart tomcat9
