@@ -39,7 +39,7 @@
     - name: Clone repository
       git:
         repo: https://github.com/boxfuse/boxfuse-sample-java-war-hello
-        dest: /boxfuse/
+        dest: /boxfuse/boxfuse-sample-java-war-hello
         force: yes
     
     - name: Bild maven
