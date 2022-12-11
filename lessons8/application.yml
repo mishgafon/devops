@@ -1,6 +1,6 @@
 ---
 - name: install jdk&maven
-  hosts: 84.201.172.36
+  hosts: 158.160.45.173
   become: yes
   
   tasks:
@@ -43,7 +43,7 @@
 
 
 - name: install application
-  hosts: 62.84.126.8
+  hosts: 158.160.43.142
   become: yes
   
   tasks:
@@ -66,4 +66,4 @@
       synchronize:
         src: /boxfuse/boxfuse-sample-java-war-hello/target/hello-1.0.war
         dest: /usr/local/tomcat/webapps
-        delegeate_to: 84.201.172.36
+        delegeate_to: 158.160.45.173
