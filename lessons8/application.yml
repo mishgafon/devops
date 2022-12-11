@@ -63,8 +63,8 @@
         name: tomcat9
         state: started
     
-    - name: Synchronization file
+    - name: Synchronization file hello-1.0.war
       synchronize:
         src: /boxfuse/boxfuse-sample-java-war-hello/target/hello-1.0.war
         dest: /usr/local/tomcat/webapps
-        delegate_to: 158.160.45.173
+      delegate_to: 158.160.45.173
