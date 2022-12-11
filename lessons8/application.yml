@@ -43,7 +43,7 @@
         chdir: /boxfuse/boxfuse-sample-java-war-hello
 
 
-- name: install application
+- name: install application hello-1.0
   hosts: 130.193.36.26
   become: yes
   
@@ -52,6 +52,11 @@
       apt:
         upgrade: yes
         update_cache: yes
+
+    - name: Ensure JDK is present
+      apt:
+        name: default-jdk
+        state: present        
     
     - name: Ensure Tomcat is present
       apt:
