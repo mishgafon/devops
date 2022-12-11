@@ -40,6 +40,7 @@
       git:
         repo: https://github.com/boxfuse/boxfuse-sample-java-war-hello
         dest: /boxfuse/
+        force: yes
     
     - name: Bild maven
       shell: mvn package
