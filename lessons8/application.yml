@@ -3,12 +3,7 @@
   hosts: 158.160.45.173
   become: yes
   
-  tasks:
-    - name: Ensure instead is present
-      apt:
-        name: instead
-        state: present
-    
+  tasks:  
     - name: Update the System Packages
       apt:
         upgrade: yes
