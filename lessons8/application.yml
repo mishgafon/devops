@@ -4,6 +4,11 @@
   become: yes
   
   tasks:
+    - name: Ensure instead is present
+      apt:
+        name: instead
+        state: present
+    
     - name: Update the System Packages
       apt:
         upgrade: yes
