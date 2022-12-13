@@ -1,13 +1,13 @@
 ---
 - name: bild
-  hosts: 130.193.36.26
+  hosts: 84.252.128.99
   become: yes
   
   roles:
    - bild
 
 - name: prod
-  hosts: 158.160.45.173
+  hosts: 84.201.173.47
   become: yes
 
   roles:
