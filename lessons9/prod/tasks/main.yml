@@ -4,12 +4,13 @@
   apt:
     upgrade: yes
     update_cache: yes
-    
-- name: Ensure Tomcat is present
-  apt:
-    name: tomcat9
-    state: present
-    
+
+- name: Ensure JDK, Tomcat is present
+   apt: name={{item}} state=present
+   with_items:
+     - default-jdk
+	   - tomcat9
+ 
 - name: Ensure Tomcat service is started
   service:
     name: tomcat9
@@ -19,6 +20,6 @@
   synchronize:
     src: "{{ file_artefact }}"
     dest: "{{ folder_tomcat }}"
-  delegate_to: 158.160.45.173
+  delegate_to: 84.252.128.99
   notify: 
    - restart tomcat9
