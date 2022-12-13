@@ -1,6 +1,6 @@
 ---
 - name: install jdk&maven
-  hosts: 158.160.45.173
+  hosts: 84.201.173.47
   become: yes
   
   tasks:  
@@ -44,7 +44,7 @@
 
 
 - name: install application hello-1.0
-  hosts: 130.193.36.26
+  hosts: 84.252.128.99
   become: yes
   
   tasks:
@@ -69,7 +69,8 @@
         state: started
     
     - name: Synchronization artifact hello-1.0.war
+      debugger: on_failed
       synchronize:
         src: /boxfuse/boxfuse-sample-java-war-hello/target/hello-1.0.war
         dest: /usr/local/tomcat/webapps/hello-1.0.war
-      delegate_to: 158.160.45.173
+      delegate_to: 184.201.173.47
