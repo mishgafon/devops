@@ -72,5 +72,5 @@
       debugger: on_failed
       synchronize:
         src: /boxfuse/boxfuse-sample-java-war-hello/target/hello-1.0.war
-        dest: /usr/local/tomcat/webapps/hello-1.0.war
+        dest: /var/lib/tomcat9/webapps/hello-1.0.war
       delegate_to: 184.201.173.47
